@@ -13,15 +13,20 @@ public class Control {
     private String sequence1;
     private String sequence2;
     
-    
+    /**
+     * This is the constructor of the class Control
+     * @param sequence1
+     * @param sequence2
+    */
     public Control(String sequence1, String sequence2) {
         this.sequence1 = sequence1.toUpperCase();
         this.sequence2 = sequence2.toUpperCase();
     }
         
-    //​ ctgactga
-    //​ actgagc
-    //resultado : actga
+    /**
+     * This method is used to compare between the 2 sequences 
+     * which is the largest part that is repeated
+    */
     public String CompareSequences(){
         String result = "";
         String [] results = new String[0];        
@@ -54,6 +59,13 @@ public class Control {
         return result;
     }    
     
+    /**
+     * This method is used to compare between the 
+     * whole vector, which contains all the repeated 
+     * parts between the 2 sequences, which is the largest
+     * @param result
+     * @param results
+    */
     private String searchHigherResult(String result, String [] results){
         for (int i = 0; i < results.length; i++) {
             if (results[i].length() > result.length()) {
@@ -63,6 +75,12 @@ public class Control {
         return result;
     }
     
+    /**
+     * This method is used to resize the container 
+     * vector of the repeated parts between the 2 sequences
+     * @param results
+     * @param newResult
+    */
     private String[] redimResults(String results[], String newResult){
         String [] results2 = results;        
         results = new String[results2.length+1];
