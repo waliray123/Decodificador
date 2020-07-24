@@ -5,6 +5,8 @@
  */
 package FrontEnd;
 
+import Backend.Control;
+
 /**
  *
  * @author user-ubunto
@@ -16,6 +18,7 @@ public class UserFront extends javax.swing.JFrame {
      */
     public UserFront() {
         initComponents();
+        
     }
 
     /**
@@ -49,6 +52,11 @@ public class UserFront extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Lato Black", 0, 15)); // NOI18N
         jButton1.setText("Calcular");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Lato", 0, 16)); // NOI18N
         jLabel4.setText("Resultado");
@@ -111,6 +119,16 @@ public class UserFront extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String sequence1 = this.TextFieldSequence1.getText();
+        String sequence2 = this.TextFieldSequence2.getText();
+        
+        Control control1 = new Control(sequence1,sequence2);
+        String result = control1.CompareSequences();
+        
+        this.LabelResult.setText(result);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
